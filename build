@@ -1,0 +1,21 @@
+#!/bin/bash
+
+GREEN='\033[1;32m'
+WHITE='\033[1;37m'
+
+#Export User ID
+export UID
+
+#Building Projects
+printf "\n${GREEN}*Uploading Application Container${WHITE}\n"
+docker-compose up -d --build
+
+#Composer Install on FACIAL
+printf "\n${GREEN}*Composer Install on FACIAL${WHITE}\n"
+docker exec -i facial composer install
+
+#INFORMATION
+printf "\n${GREEN}*Information Containers Uploaded ${WHITE}\n\n"
+docker ps -a
+
+printf "\n\n"

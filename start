@@ -1,0 +1,18 @@
+#!/bin/bash
+
+NC='\033[0m' # No Color
+GREEN='\033[1;32m'
+WHITE='\033[1;37m'
+YELLOW='\033[1;33m'
+RED='\033[1;31m'
+
+#Export User ID
+printf "\n${RED}*Starting All Containers${WHITE}\n"
+export UID
+
+#Docker compose UP
+printf "\n${YELLOW}*Executing Docker Compose UP...${WHITE}\n"
+docker-compose up -d
+printf "\n${GREEN}*Docker Compose UP OK!${WHITE}\n"
+
+printf "\n${RED}*All Containers Started Successfull!${WHITE}\n\n"

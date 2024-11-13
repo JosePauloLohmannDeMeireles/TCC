@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+face_recognition
+opencv-python-headless
+requests
+mediapipe
+numpy

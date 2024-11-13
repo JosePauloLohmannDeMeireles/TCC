@@ -52,11 +52,10 @@ def validate_face_process(data):
 
     distances = face_recognition.face_distance(known_face_encodings, face_encodings[0])
     average_distance = np.mean(distances)
-    std_dev_distance = np.std(distances)
     similarity_percentage = (1 - average_distance) * 100
     acceptance_threshold = 70.0
 
-    if similarity_percentage >= (acceptance_threshold - std_dev_distance):
+    if similarity_percentage >= acceptance_threshold:
         return {"success": True, "message": "Rosto validado com sucesso."}
     else:
         return {"success": False, "message": "Rosto invalido."}
